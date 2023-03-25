@@ -42,20 +42,20 @@ let playerA__score, playerB__score, max__score;
 // function to setup the position of the ball inside the window
 function setupPositionOfBall() {
 
-    toAddInX = -5;
+    toAddInX = -10;
     if (isBallGoingDown === null) {
         // setting the top css property of the ball
         ball.style.top = `${bar__height}px`;
-        toAddInY = 2;
+        toAddInY = 4;
     } else {
         if (isBallGoingDown === 1) {
             // setting the bottom css property of the ball
             ball.style.bottom = `${bar__height}px`;
-            toAddInY = -2;
+            toAddInY = -4;
         } else {
             // setting the top css property of the ball
             ball.style.top = `${bar__height}px`;
-            toAddInY = 2;
+            toAddInY = 4;
         }
         isBallGoingDown ^= 1;
     }
@@ -232,11 +232,11 @@ document.addEventListener("keydown", (event) => {
         let updated__x;
         if (event.key === 'a' || event.key === 'A')  {
             // condition for moving the bar to the left side
-            updated__x = curr__x - 10;
+            updated__x = curr__x - 15;
             if (updated__x < 0) updated__x = 0;
         } else if (event.key === 'd' || event.key === 'D') {
             // condition for moving the bar to the right side
-            updated__x = curr__x + 10;
+            updated__x = curr__x + 15;
             if (updated__x + bar__width > window__width) updated__x = window__width - bar__width;
         }
 
